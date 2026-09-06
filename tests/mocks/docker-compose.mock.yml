@@ -1,0 +1,13 @@
+services:
+  localstack:
+    image: localstack/localstack:3.8
+    container_name: tf-study-localstack
+    ports:
+      - "127.0.0.1:4566:4566"
+    environment:
+      PERSISTENCE: "1"
+      DEBUG: "0"
+    volumes:
+      - ls-data:/var/lib/localstack
+volumes:
+  ls-data:
